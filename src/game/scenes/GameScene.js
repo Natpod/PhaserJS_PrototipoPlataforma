@@ -228,17 +228,26 @@ _buildSurfer(width, height) {
     // Táctil: zonas izquierda / centro / derecha
     this._touchLeft  = false;
     this._touchRight = false;
+    this._touchDuck  = false;
 
     this.input.on('pointerdown', (pointer) => {
       const px = pointer.x / this.scale.width;
-      if (px < 0.35)       { this._touchLeft = true; }
-      else if (px > 0.65)  { this._touchRight = true; }
-      else                 { this._jump(); }
+      const py = pointer.y / this.scale.height;
+      if (py > 0.82 && px > 0.35 && px < 0.65) {
+        this._touchDuck = true;
+      } else if (px < 0.35) {
+        this._touchLeft = true;
+      } else if (px > 0.65) {
+        this._touchRight = true;
+      } else {
+        this._jump();
+      }
     });
 
     this.input.on('pointerup', () => {
       this._touchLeft  = false;
       this._touchRight = false;
+      this._touchDuck  = false;
     });
 
   }
@@ -249,7 +258,7 @@ _buildSurfer(width, height) {
     const onGround = this._surfer.body.blocked.down;
     const left  = this._cursors.left.isDown  || this._wasd.A.isDown || this._touchLeft;
     const right = this._cursors.right.isDown || this._wasd.D.isDown || this._touchRight;
-    const down  = this._cursors.down.isDown  || this._wasd.S.isDown;
+    const down  = this._cursors.down.isDown  || this._wasd.S.isDown || this._touchDuck;
     const jumpPressed =
       Phaser.Input.Keyboard.JustDown(this._cursors.up)   ||
       Phaser.Input.Keyboard.JustDown(this._wasd.W)       ||

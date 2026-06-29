@@ -86,7 +86,7 @@ export class MenuScene extends Phaser.Scene {
     btn.on('pointerout',  () => btn.setStyle({ color: '#010e1a', backgroundColor: '#3dd6f5' }));
 
     // ── Controles ─────────────────────────────────────────────────
-    this.add.text(width / 2, height * 0.84, '← → moverse  ·  Espacio / toca para saltar  ·  ↓ agacharse', {
+    this.add.text(width / 2, height * 0.84, '← → moverse  ·  Espacio / toca centro para saltar  ·  toca abajo-centro para agacharte', {
       fontSize: '12px',
       fontFamily: 'sans-serif',
       color: '#607d8b',
