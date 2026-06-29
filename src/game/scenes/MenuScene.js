@@ -46,7 +46,7 @@ export class MenuScene extends Phaser.Scene {
     this.add.text(width / 2, height * 0.40, 'Esquiva tiburones, rocas y medusas en PR', {
       fontSize: '16px',
       fontFamily: 'sans-serif',
-      color: '#b8e4f0',
+      color: '#000000',
     }).setOrigin(0.5);
 
     // ── High score ─────────────────────────────────────────────────
@@ -55,7 +55,7 @@ export class MenuScene extends Phaser.Scene {
       this.add.text(width / 2, height * 0.46, `Récord: ${hs}`, {
         fontSize: '14px',
         fontFamily: 'sans-serif',
-        color: '#ffe066',
+        color: '#5a4f25',
       }).setOrigin(0.5);
     }
 
@@ -86,7 +86,7 @@ export class MenuScene extends Phaser.Scene {
     btn.on('pointerout',  () => btn.setStyle({ color: '#010e1a', backgroundColor: '#3dd6f5' }));
 
     // ── Controles ─────────────────────────────────────────────────
-    this.add.text(width / 2, height * 0.84, '← → moverse  ·  Espacio / toca centro para saltar  ·  toca abajo-centro para agacharte', {
+    this.add.text(width / 2, height * 0.84, '← → moverse  ·  Espacio / toca para saltar  ·  ↓ agacharse', {
       fontSize: '12px',
       fontFamily: 'sans-serif',
       color: '#607d8b',
