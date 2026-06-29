@@ -1,0 +1,23 @@
+{
+  "name": "surf-rush",
+  "version": "1.0.0",
+  "description": "Juego de surf 2D con Phaser 3 y Webpack",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development"
+  },
+  "dependencies": {
+    "phaser": "^3.87.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.0",
+    "@babel/preset-env": "^7.27.0",
+    "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^14.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.0",
+    "webpack-dev-server": "^5.2.5"
+  }
+}
